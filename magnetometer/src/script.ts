@@ -1,5 +1,13 @@
+let textout : HTMLElement | null;
+
 function contentLoaded() : void {
   console.log("Content loaded!");
+
+  textout = document.getElementById('textout');
+
+  if (null !== textout) {
+    textout.textContent = `typeof(Gyroscope) is ${typeof(Gyroscope)} and typeof(Magnetometer) is ${typeof(Magnetometer)}`;
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////
