@@ -4,7 +4,8 @@
   "description": "Exploring Sensor API Magnetometer Access",
   "main": "index.js",
   "scripts": {
-    "srv": "node tools/serve.js"
+    "srv": "node tools/serve.js",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
