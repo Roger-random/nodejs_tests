@@ -3,7 +3,7 @@ let mag : Magnetometer;
 
 function dotTwo(n : number | undefined) : string {
   if ('number'===typeof(n)) {
-    return n.toPrecision(2);
+    return n.toFixed(2);
   } else {
     return "";
   }

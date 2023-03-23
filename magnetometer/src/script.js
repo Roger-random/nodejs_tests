@@ -3,7 +3,7 @@ let statusText;
 let mag;
 function dotTwo(n) {
     if ('number' === typeof (n)) {
-        return n.toPrecision(2);
+        return n.toFixed(2);
     }
     else {
         return "";
