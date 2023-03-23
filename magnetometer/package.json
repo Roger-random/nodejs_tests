@@ -21,5 +21,8 @@
     "@types/w3c-generic-sensor": "^1.0.6",
     "finalhandler": "^1.2.0",
     "serve-static": "^1.15.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.0.1"
   }
 }
