@@ -2,7 +2,7 @@
   "name": "magnetometer",
   "version": "1.0.0",
   "description": "Exploring Sensor API Magnetometer Access",
-  "private" : true,
+  "private": true,
   "scripts": {
     "srv": "node tools/serve.js",
     "tsc": "tsc"
@@ -17,12 +17,9 @@
     "url": "https://github.com/Roger-random/nodejs_tests/issues"
   },
   "homepage": "https://github.com/Roger-random/nodejs_tests#readme",
-  "dependencies": {
+  "devDependencies": {
     "@types/w3c-generic-sensor": "^1.0.6",
     "finalhandler": "^1.2.0",
     "serve-static": "^1.15.0"
-  },
-  "devDependencies": {
-    "webpack-cli": "^5.0.1"
   }
 }
