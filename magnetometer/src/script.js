@@ -1,14 +1,22 @@
 "use strict";
 let statusText;
 let mag;
+function dotTwo(n) {
+    if ('number' === typeof (n)) {
+        return n.toPrecision(2);
+    }
+    else {
+        return "";
+    }
+}
 function magnetometerReading() {
     if (statusText) {
-        statusText.textContent = `Magnetometer Reading Callback: X=${mag.x} Y=${mag.y} Z=${mag.z} @ time=${mag.timestamp}`;
+        statusText.textContent = `Magnetometer: X=${dotTwo(mag.x)} Y=${dotTwo(mag.y)} Z=${dotTwo(mag.z)}`;
     }
 }
 function magnetometerError(e) {
     if (statusText) {
-        statusText.textContent = `Magnetometer Error Callback: ${e.error.message}`;
+        statusText.textContent = `Error: ${e.error.message}`;
     }
 }
 function contentLoaded() {
@@ -17,27 +25,24 @@ function contentLoaded() {
         if ('undefined' !== typeof (Magnetometer)) {
             try {
                 mag = new Magnetometer({ frequency: 10 });
-                statusText.textContent = `Magnetometer Created`;
+                statusText.textContent = `Created`;
                 mag.onerror = magnetometerError;
                 mag.onreading = magnetometerReading;
                 mag.start();
-                statusText.textContent = `Magnetometer Started`;
+                statusText.textContent = `Started`;
             }
             catch (e) {
                 if (e && typeof (e) === 'object' && 'message' in e) {
-                    statusText.textContent = `Magnetometer Exception: ${e.message}`;
+                    statusText.textContent = `Exception: ${e.message}`;
                 }
                 else {
-                    statusText.textContent = 'Magnetometer Exception raised with no diagnostic message';
+                    statusText.textContent = 'Exception raised with no diagnostic message';
                 }
             }
         }
         else {
-            statusText.textContent = `Magnetometer API not available`;
+            statusText.textContent = `API not available.`;
         }
     }
 }
-//////////////////////////////////////////////////////////////////////////
-//
-//  Page load setup
 document.addEventListener('DOMContentLoaded', contentLoaded, false);
