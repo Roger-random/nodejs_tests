@@ -2,7 +2,7 @@
   "name": "magnetometer",
   "version": "1.0.0",
   "description": "Exploring Sensor API Magnetometer Access",
-  "main": "index.js",
+  "private" : true,
   "scripts": {
     "srv": "node tools/serve.js",
     "tsc": "tsc"
