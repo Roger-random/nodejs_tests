@@ -1,5 +1,6 @@
 "use strict";
 let statusText;
+let webgldetected;
 let mag;
 function dotTwo(n) {
     if ('number' === typeof (n)) {
@@ -21,6 +22,7 @@ function magnetometerError(e) {
 }
 function contentLoaded() {
     statusText = document.getElementById('statusText');
+    webgldetected = document.getElementById('webgldetected');
     if (statusText) {
         if ('undefined' !== typeof (Magnetometer)) {
             try {
@@ -42,6 +44,15 @@ function contentLoaded() {
         }
         else {
             statusText.textContent = `API not available.`;
+        }
+    }
+    if (webgldetected) {
+        let testCanvas = document.createElement('canvas');
+        if (testCanvas.getContext("webgl")) {
+            webgldetected.textContent = 'Supported by this browser';
+        }
+        else {
+            webgldetected.textContent = 'Not supported by this browser';
         }
     }
 }

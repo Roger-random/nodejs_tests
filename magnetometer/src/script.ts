@@ -1,4 +1,5 @@
 let statusText : HTMLElement | null;
+let webgldetected : HTMLElement | null;
 let mag : Magnetometer;
 
 function dotTwo(n : number | undefined) : string {
@@ -23,6 +24,7 @@ function magnetometerError(e:SensorErrorEvent) : void {
 
 function contentLoaded() : void {
   statusText = document.getElementById('statusText');
+  webgldetected = document.getElementById('webgldetected');
 
   if (statusText) {
     if ('undefined' !== typeof(Magnetometer)) {
@@ -42,6 +44,14 @@ function contentLoaded() : void {
       }
     } else {
       statusText.textContent = `API not available.`;
+    }
+  }
+  if (webgldetected) {
+    let testCanvas: HTMLCanvasElement = document.createElement('canvas');
+    if (testCanvas.getContext("webgl")) {
+      testCanvas.textContent = 'OK!'
+    } else {
+      testCanvas.textContent = 'Missing'
     }
   }
 }
