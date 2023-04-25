@@ -11,9 +11,12 @@ Started" guide and after that, it serves as a playground for webpack features.
 * [hello-vue3](./hello-vue3/): The "Quick Start" project of
 [Vue application framework](https://vuejs.org/guide/quick-start.html).
 * [hello-vite](./hello-vite/): "Scaffolding Your First Vite Project" example of
-[Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
+[Vite](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) followed
+by addition of
+[legacy browser support](https://vitejs.dev/guide/build.html#browser-compatibility)
+to output "IE 11" build that runs on Windows Phone 8 Internet Explorer.
 
---
+---
 
 * [docs](./docs/): Subdirectory whose content will be statically served via
 [GitHub pages](https://roger-random.github.io/nodejs_tests/).
